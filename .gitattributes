@@ -1,0 +1,3 @@
+text=auto eol=lf
+sessions/session00/solutions/** filter=encS00 diff=binary
+sessions/session01/solutions/** filter=encS01 diff=binary
