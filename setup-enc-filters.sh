@@ -4,11 +4,12 @@ set -euo pipefail
 
 PREFIX="session"
 # Define el número de iteraciones (por ejemplo, 0 para session00.pass; cambia este valor para procesar más ficheros)
-END=1
+INIT=1
+END=2
 LAST_ID=""
 counter=0
 
-for i in $(seq 0 $END); do
+for i in $(seq $INIT $END); do
   LAST_ID=$(printf "%02d" "$i")
   git config --local filter.encS${LAST_ID}.clean "openssl enc -aes-256-cbc -nosalt -pbkdf2 -iter 10000 -pass file:.keys/${PREFIX}${LAST_ID}.pass -in - -out -"
   git config --local filter.encS${LAST_ID}.smudge "openssl enc -d -aes-256-cbc -nosalt -pbkdf2 -iter 10000 -pass file:.keys/${PREFIX}${LAST_ID}.pass -in - -out -"
