@@ -33,7 +33,7 @@ Tu tarea es crear un pequeño panel que permita **sumar y restar oxígeno** en l
 
 ### 📷 Ejemplo visual (no obligatorio)
 
-```
+```txt
 Oxígeno: 50%
 
 [ +5% ] [ -5% ]
